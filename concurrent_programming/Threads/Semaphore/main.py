@@ -4,9 +4,9 @@ import threading
 from ball import Ball
 from player import Player
 
-def name_generator(n):
+def name_generator(n, ball):
     for idx in range(n):
-        yield "Player " + str(idx+1)
+        yield ("Player " + str(idx+1), ball)
 
 if __name__ == '__main__':
     print("start the game!")
