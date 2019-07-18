@@ -8,14 +8,10 @@ class Semaphore:
 
     def down(self, thread):
         if self.__mutex == 0:
-
-            if thread in self.__sleep_list:
-                thread.sleep()
-            else:
-                print(thread.get_name(), "tried to get the ball, sleeping!")
-                self.__sleep_list.append(thread)
-                #print(self.__sleep_list)
-                thread.sleep()
+            print(thread.get_name(), "tried to get the ball, sleeping!")
+            self.__sleep_list.append(thread)
+            #print(self.__sleep_list)
+            thread.sleep()
         else:
             self.__mutex -= 1
             print(thread.get_name(), "has the ball!")
@@ -28,7 +24,10 @@ class Semaphore:
             curr_thread = self.__sleep_list[rand_index]
             self.__sleep_list.remove(curr_thread)
             self.__mutex = 1
-            curr_thread.wakeup()
+            try:
+                curr_thread.wakeup()
+            except Exception:
+                pass
             #print(self.__sleep_list)
 
     def is_sleeping(self, thread):

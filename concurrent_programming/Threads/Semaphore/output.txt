@@ -1,0 +1,46 @@
+start the game!
+Player 1 has the ball!
+Player 2 tried to get the ball, sleeping!
+Player 3 tried to get the ball, sleeping!
+Player 1 left the ball!
+Player 2 wakeup! True
+Player 2 has the ball!
+Player 2 left the ball!
+Player 3 wakeup! True
+Player 1 has the ball!
+Player 3 tried to get the ball, sleeping!
+Player 1 left the ball!
+Player 3 wakeup! True
+Player 3 has the ball!
+Player 2 tried to get the ball, sleeping!
+Player 3 left the ball!
+Player 2 wakeup! True
+Player 1 has the ball!
+Player 3 tried to get the ball, sleeping!
+Player 2 tried to get the ball, sleeping!
+Player 1 left the ball!
+Player 3 wakeup! True
+Player 3 has the ball!
+Player 3 left the ball!
+Player 2 wakeup! True
+Player 2 has the ball!
+Player 1 tried to get the ball, sleeping!
+Player 2 left the ball!
+Player 1 wakeup! True
+Player 1 has the ball!
+Player 3 tried to get the ball, sleeping!
+Player 1 left the ball!
+Player 3 wakeup! True
+Player 3 has the ball!
+Player 2 tried to get the ball, sleeping!
+Player 3 left the ball!
+Player 2 wakeup! True
+Player 2 has the ball!
+Player 1 tried to get the ball, sleeping!
+Player 3 tried to get the ball, sleeping!
+Player 2 left the ball!
+Player 3 wakeup! True
+Player 3 has the ball!
+Player 3 left the ball!
+Player 1 wakeup! True
+end game!

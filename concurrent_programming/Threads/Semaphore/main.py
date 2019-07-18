@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print("start the game!")
     
     b = Ball()
-    n_players = 3
+    n_players = 5
     join_list = []
   
     for player in name_generator(n_players, b):
