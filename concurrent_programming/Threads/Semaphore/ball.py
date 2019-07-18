@@ -11,8 +11,8 @@ class Ball:
         self.sem = Semaphore()
 
     def get_the_ball(self, name, thread):
-        while(self.time_count < 3):
-            print(self.time_count, thread.get_name())
+        while(self.time_count < 10):
+            #print(self.time_count, thread.get_name())
             self.sem.down(thread) # down
 
             if thread.was_sleeping:

@@ -14,12 +14,12 @@ class Semaphore:
             else:
                 print(thread.get_name(), "tried to get the ball, sleeping!")
                 self.__sleep_list.append(thread)
-                print(self.__sleep_list)
+                #print(self.__sleep_list)
                 thread.sleep()
         else:
             self.__mutex -= 1
             print(thread.get_name(), "has the ball!")
-            print(self.__sleep_list)
+            #print(self.__sleep_list)
 
     def up(self, thread):
         if self.__sleep_list != []:
@@ -29,7 +29,7 @@ class Semaphore:
             self.__sleep_list.remove(curr_thread)
             self.__mutex = 1
             curr_thread.wakeup()
-            print(self.__sleep_list)
+            #print(self.__sleep_list)
 
     def is_sleeping(self, thread):
         if thread in self.__sleep_list:
