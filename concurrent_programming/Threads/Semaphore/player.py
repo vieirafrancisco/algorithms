@@ -17,7 +17,7 @@ class Player(threading.Thread):
         self.event.wait()
 
     def wakeup(self):
-        print(self.name, "wakeup!")
+        print(self.name, "wakeup!", self.was_sleeping)
         self.event.set()
 
     def is_sleeping(self):

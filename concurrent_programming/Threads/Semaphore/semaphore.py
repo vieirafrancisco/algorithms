@@ -19,6 +19,7 @@ class Semaphore:
         else:
             self.__mutex -= 1
             print(thread.get_name(), "has the ball!")
+            print(self.__sleep_list)
 
     def up(self, thread):
         if self.__sleep_list != []:
