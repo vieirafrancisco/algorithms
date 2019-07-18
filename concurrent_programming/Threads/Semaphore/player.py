@@ -11,7 +11,7 @@ class Player(threading.Thread):
         self.__wake = True
 
     def run(self):
-        self.ball.get_the_ball(self.name, self)
+        self.ball.get_the_ball(self)
 
     def sleep(self):
         self.was_sleeping = True
@@ -22,12 +22,6 @@ class Player(threading.Thread):
     def wakeup(self):
         print(self.name, "wakeup!", self.was_sleeping)
         self.__wake = True
-
-    def is_sleeping(self):
-        if self.event.is_set():
-            return True
-        else:
-            return False
 
     def get_name(self):
         return self.name
