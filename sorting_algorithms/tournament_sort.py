@@ -10,7 +10,7 @@ INF = sys.maxsize
 class TournamentSort:
     
     def __init__(self, arr):
-        self.arr = arr
+        self.arr = arr.copy()
         self.arr_size = len(arr)
         self.depth = math.ceil(math.log2(self.arr_size))
         self.tree_arr =  (2 * pow(2,self.depth) - 1) * [Element(INF)]

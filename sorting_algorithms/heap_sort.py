@@ -4,20 +4,18 @@ import random
 from element import Element
 
 class HeapSort:
-    def __init__(self):
-        self.arr = None
-        self.size = 0
-
-    def sort(self, arr):
+    def __init__(self, arr):
         self.arr = arr.copy()
         self.size = len(arr)
 
+    def sort(self):
         for i in range(self.size, -1, -1):
             self.heapify(i, self.size)
 
         for i in range(self.size - 1, 0, -1):
             self.swap(0, i)
             self.heapify(0, i)
+        return self.arr
 
     def heapify(self, i, n):
         left = 2 * i + 1
@@ -38,11 +36,12 @@ class HeapSort:
 
 
 if __name__ == '__main__':
-    hs = HeapSort()
+    
     arr = [Element(i) for i in range(1000000)]
     random.shuffle(arr)
     begin = time.time()
-    hs.sort(arr)
+    hs = HeapSort(arr)
+    sorted_arr = hs.sort()
     end = time.time()
     print(end-begin)
     num_comparations = 0
