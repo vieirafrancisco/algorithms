@@ -1,6 +1,8 @@
 import time
 import random
 
+from element import Element
+
 class HeapSort:
     def __init__(self):
         self.arr = None
@@ -37,9 +39,13 @@ class HeapSort:
 
 if __name__ == '__main__':
     hs = HeapSort()
-    arr = [i for i in range(1000000)]
+    arr = [Element(i) for i in range(1000000)]
     random.shuffle(arr)
     begin = time.time()
     hs.sort(arr)
     end = time.time()
     print(end-begin)
+    num_comparations = 0
+    for element in hs.arr:
+        num_comparations += element.num_comparations
+    print(num_comparations)

@@ -3,6 +3,8 @@ import math
 import random
 import time
 
+from element import Element
+
 INF = sys.maxsize
 
 class TournamentSort:
@@ -11,7 +13,7 @@ class TournamentSort:
         self.arr = arr
         self.arr_size = len(arr)
         self.depth = math.ceil(math.log2(self.arr_size))
-        self.tree_arr =  (2 * pow(2,self.depth) - 1) * [INF]
+        self.tree_arr =  (2 * pow(2,self.depth) - 1) * [Element(INF)]
 
     def sort(self):
         sorted_arr = []
@@ -27,7 +29,7 @@ class TournamentSort:
                     i = 2*i + 1
                 else:
                     i = 2*i + 2
-            self.tree_arr[i] = INF
+            self.tree_arr[i] = Element(INF)
 
             while(i > 0): # O(2*logn) == O(logn)
                 parent = math.ceil(i/2)-1
@@ -59,7 +61,7 @@ class TournamentSort:
         return self.tree_arr[idx]
 
 if __name__ == '__main__':
-    arr = [i for i in range(100)]
+    arr = [Element(i) for i in range(100)]
     random.shuffle(arr)
     begin = time.time()
     t = TournamentSort(arr)
@@ -67,6 +69,7 @@ if __name__ == '__main__':
     end = time.time()
     print(end-begin)
     print(sorted_arr)
-
-
-    
+    num_comparations = 0
+    for element in sorted_arr:
+        num_comparations += element.num_comparations
+    print(num_comparations)
