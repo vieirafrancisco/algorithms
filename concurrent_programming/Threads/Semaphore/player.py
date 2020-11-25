@@ -1,6 +1,7 @@
 import time
 import threading
 
+
 class Player(threading.Thread):
     
     def __init__(self, name, ball):

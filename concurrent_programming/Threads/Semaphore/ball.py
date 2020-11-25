@@ -4,6 +4,7 @@ import threading
 
 from semaphore import Semaphore
 
+
 class Ball:
 
     def __init__(self):
@@ -12,7 +13,6 @@ class Ball:
 
     def get_the_ball(self, thread):
         while(self.time_count < 45):
-            #print(self.time_count, thread.get_name())
             self.sem.down(thread) # down
 
             if thread.was_sleeping:
@@ -27,7 +27,6 @@ class Ball:
         
         if not self.sem.is_active() and self.sem.has_someone_sleeping():
             self.sem.up()
-        #print("Fim While", thread.get_name())
 
     def left_the_ball(self, thread):
         print(thread.get_name(), "left the ball!")

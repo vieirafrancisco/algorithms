@@ -3,11 +3,13 @@ import threading
 from ball import Ball
 from player import Player
 
+
 def name_generator(n, ball):
     for idx in range(n):
         yield ("Player " + str(idx+1), ball)
 
-if __name__ == '__main__':
+
+def main():
     print("start the game!")
     
     b = Ball()
@@ -23,3 +25,7 @@ if __name__ == '__main__':
         thread.join()
 
     print("end game!")
+
+
+if __name__ == '__main__':
+    main()

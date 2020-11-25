@@ -1,5 +1,6 @@
 import random
 
+
 class Semaphore:
 
     def __init__(self):
@@ -11,13 +12,11 @@ class Semaphore:
         if self.__mutex == 0:
             print(thread.get_name(), "tried to get the ball, sleeping!")
             self.__sleep_list.append(thread)
-            #print(self.__sleep_list)
             thread.sleep()
         else:
             self.__mutex -= 1
             self.__active = True
             print(thread.get_name(), "has the ball!")
-            #print(self.__sleep_list)
 
     def up(self):
         if self.has_someone_sleeping():
@@ -26,7 +25,6 @@ class Semaphore:
             curr_thread = self.__sleep_list[rand_index]
             self.__sleep_list.remove(curr_thread)
             curr_thread.wakeup()
-            #print(self.__sleep_list)
         self.__mutex = 1
         self.__active = False
 
